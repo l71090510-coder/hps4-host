@@ -27,11 +27,12 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            filter: brightness(0.5);
+            object-position: center top;
+            filter: brightness(0.85);
             z-index: 1;
         }
 
-        /* المحتوى فوق الصورة */
+        /* حاوية التوزيع */
         .overlay-container {
             position: relative;
             z-index: 2;
@@ -41,43 +42,53 @@
             flex-direction: column;
             justify-content: space-between;
             align-items: center;
-            padding: 40px 20px;
+            padding: 20px 20px 30px 20px;
             text-align: center;
         }
 
+        /* مسافة فارغة في الأعلى لإبقاء الوجه واضحاً */
+        .top-spacer {
+            height: 10vh;
+        }
+
+        /* مربع البيانات في منتصف الشاشة (على الصدر) */
         .header-content {
-            background: rgba(11, 14, 20, 0.75);
-            padding: 15px 25px;
-            border-radius: 20px;
-            border: 1px solid rgba(0, 112, 209, 0.5);
-            box-shadow: 0 0 20px rgba(0, 112, 209, 0.4);
+            background: rgba(11, 14, 20, 0.85);
+            padding: 12px 20px;
+            border-radius: 18px;
+            border: 1px solid rgba(0, 112, 209, 0.6);
+            box-shadow: 0 0 20px rgba(0, 112, 209, 0.5);
             backdrop-filter: blur(5px);
+            max-width: 290px;
+            width: 100%;
+            margin-top: 140px; /* نزول المربع ليكون على منطقة الصدر بالضبط */
         }
 
         .sony-symbols {
-            font-size: 22px;
+            font-size: 18px;
             color: #0070d1;
-            letter-spacing: 8px;
-            margin-bottom: 8px;
-            text-shadow: 0 0 10px #0070d1;
+            letter-spacing: 6px;
+            margin-bottom: 4px;
+            text-shadow: 0 0 8px #0070d1;
         }
 
         .user-name {
-            font-size: 24px;
+            font-size: 22px;
             font-weight: bold;
             color: #ffffff;
-            margin-bottom: 4px;
+            margin-bottom: 2px;
             text-shadow: 0 0 8px rgba(0, 112, 209, 0.8);
         }
 
         .user-phone {
-            font-size: 18px;
+            font-size: 16px;
             color: #25d366;
             direction: ltr;
             font-weight: bold;
             letter-spacing: 1px;
         }
 
+        /* زر GoldHEN أسفل الشاشة */
         .goldhen-btn {
             display: block;
             width: 100%;
@@ -101,17 +112,22 @@
 </head>
 <body>
 
-    <!-- الصورة تغطي كامل الصفحة -->
+    <!-- الصورة خلفية -->
     <img src="FB_IMG_1790699521992.jpg" alt="PS4 Background" class="bg-image">
 
-    <!-- البيانات فوق الصورة -->
+    <!-- المحتوى -->
     <div class="overlay-container">
+        <!-- مساحة فارغة في الأعلى لكشف الوجه -->
+        <div class="top-spacer"></div>
+
+        <!-- مربع المعلومات في المنتصف بالضبط على الصدر -->
         <div class="header-content">
             <div class="sony-symbols">✖ ⭕ 🔺 ⬛</div>
             <div class="user-name">أبو علي</div>
             <div class="user-phone">📱 07884447273</div>
         </div>
 
+        <!-- الزر أسفل الشاشة -->
         <a href="https://raw13g.github.io/" class="goldhen-btn">GoldHEN</a>
     </div>
 
